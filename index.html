@@ -49,6 +49,37 @@ h1, h2, h3, h4 { font-family: 'Syne', sans-serif; }
   background-size: 200px;
 }
 
+/* ─── HERO SLIDESHOW ─── */
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(15, 25, 35, 0.85) 0%, rgba(27, 58, 75, 0.75) 40%, rgba(17, 138, 178, 0.65) 100%);
+  z-index: 1;
+}
+
 /* ─── NAV ─── */
 .nav {
   position: fixed;
@@ -389,9 +420,9 @@ h1, h2, h3, h4 { font-family: 'Syne', sans-serif; }
 }
 
 .scooter-info h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 8px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 10px;
 }
 
 .scooter-info .scooter-desc {
@@ -927,10 +958,17 @@ h1, h2, h3, h4 { font-family: 'Syne', sans-serif; }
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-slideshow">
+    <div class="hero-slide active"><img src="rider-rocks.jpg" alt="Scooter at rock formation"></div>
+    <div class="hero-slide"><img src="rider-coast.jpg" alt="Scooter by the coast"></div>
+    <div class="hero-slide"><img src="rider-jane.jpg" alt="Jane cruising Nuku'alofa"></div>
+    <div class="hero-slide"><img src="rider-fiki.jpg" alt="Fiki on scooter"></div>
+  </div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-badge">🏝️ Tongatapu, Kingdom of Tonga</div>
     <h1>Explore Tonga<br>on <em>Two Wheels</em></h1>
-    <p class="hero-sub">The easiest way to explore Tongatapu. Affordable scooter rentals from just 50 TOP/day. Helmets included, delivered to your hotel.</p>
+    <p class="hero-sub">The easiest way to explore Tongatapu. Affordable scooter rentals from just 50 TOP/day. Helmets included. Pick up from our shop in Nuku'alofa.</p>
     <div class="hero-buttons">
       <a href="booking/" class="btn-primary">
         Book Online Now →
@@ -951,7 +989,7 @@ h1, h2, h3, h4 { font-family: 'Syne', sans-serif; }
       </div>
       <div class="hero-price-item">
         <div class="price">FREE</div>
-        <div class="price-label">hotel delivery</div>
+        <div class="price-label">helmets included</div>
       </div>
     </div>
   </div>
@@ -973,8 +1011,8 @@ h1, h2, h3, h4 { font-family: 'Syne', sans-serif; }
       <div class="stat-label">Helmets included</div>
     </div>
     <div class="trust-stat">
-      <div class="stat-number">24/7</div>
-      <div class="stat-label">Roadside support</div>
+      <div class="stat-number">24h</div>
+      <div class="stat-label">Rental period</div>
     </div>
   </div>
 </section>
@@ -1092,11 +1130,6 @@ h1, h2, h3, h4 { font-family: 'Syne', sans-serif; }
   </div>
   <div class="why-grid">
     <div class="why-card">
-      <div class="why-icon">🏨</div>
-      <h3>Hotel Delivery</h3>
-      <p>We deliver the scooter directly to your hotel or accommodation. No need to come find us.</p>
-    </div>
-    <div class="why-card">
       <div class="why-icon">⛑️</div>
       <h3>Helmets Included</h3>
       <p>Safety first. Every rental comes with a quality helmet at no extra charge.</p>
@@ -1105,11 +1138,6 @@ h1, h2, h3, h4 { font-family: 'Syne', sans-serif; }
       <div class="why-icon">🔧</div>
       <h3>Well Maintained</h3>
       <p>All scooters are regularly serviced and checked before every rental. Ride with confidence.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">📞</div>
-      <h3>24/7 Support</h3>
-      <p>Flat tire? Need help? Call us anytime. We provide roadside assistance across Tongatapu.</p>
     </div>
     <div class="why-card">
       <div class="why-icon">💰</div>
@@ -1134,13 +1162,13 @@ h1, h2, h3, h4 { font-family: 'Syne', sans-serif; }
   <div class="how-steps">
     <div class="how-step">
       <div class="step-number">1</div>
-      <h3>Message Us</h3>
-      <p>Send us a WhatsApp message with your dates, hotel name, and which scooter you'd like.</p>
+      <h3>Book Online</h3>
+      <p>Book through our website or send us a WhatsApp message with your dates and which scooter you'd like.</p>
     </div>
     <div class="how-step">
       <div class="step-number">2</div>
-      <h3>We Deliver</h3>
-      <p>We bring the scooter to your hotel with a helmet. Quick handover and you're ready to go.</p>
+      <h3>Pick Up</h3>
+      <p>Come to our shop in Nuku'alofa. Quick handover, helmet included, and you're ready to ride.</p>
     </div>
     <div class="how-step">
       <div class="step-number">3</div>
@@ -1229,7 +1257,7 @@ h1, h2, h3, h4 { font-family: 'Syne', sans-serif; }
 <section class="cta">
   <div class="cta-content">
     <h2>Ready to Ride?</h2>
-    <p>Message us on WhatsApp with your dates and we'll have a scooter waiting at your hotel. It's that simple.</p>
+    <p>Book online or message us on WhatsApp. Pick up your scooter from our shop and start exploring. It's that simple.</p>
     <div class="cta-buttons">
       <a href="booking/" class="btn-primary">Book Online Now →</a>
       <a href="https://wa.me/6768626339?text=Hi%2C%20I'd%20like%20to%20rent%20a%20scooter%20in%20Tonga" class="btn-secondary">
@@ -1304,6 +1332,14 @@ document.querySelectorAll('.review-card').forEach((el, i) => {
 });
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+const slides = document.querySelectorAll('.hero-slide');
+let current = 0;
+setInterval(() => {
+  slides[current].classList.remove('active');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+}, 4000);
 </script>
 
 </body>
