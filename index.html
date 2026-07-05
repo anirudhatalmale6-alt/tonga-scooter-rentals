@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tonga Scooter Rentals — Explore Tongatapu on Two Wheels</title>
+<meta name="description" content="Rent a scooter in Tonga. Affordable daily and weekly rates. Helmets included. Delivery to your hotel. Explore Tongatapu your way.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --deep: #0F1923;
+  --dark: #162230;
+  --accent: #FFD166;
+  --accent-hover: #FFBF33;
+  --teal: #06D6A0;
+  --coral: #EF476F;
+  --sky: #118AB2;
+  --white: #FFFFFF;
+  --cream: #FFF9EC;
+  --light-gray: #F0F4F8;
+  --text: #1A1A2E;
+  --text-light: #6B7280;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 { font-family: 'Syne', sans-serif; }
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px;
+}
+
+/* ─── NAV ─── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav.scrolled {
+  background: rgba(15, 25, 35, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 14px 48px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+}
+
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.4s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-logo .logo-icon {
+  font-size: 1.8rem;
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: var(--deep);
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.nav-cta:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 209, 102, 0.3);
+}
+
+/* ─── HERO ─── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--deep) 0%, #1B3A4B 40%, var(--sky) 100%);
+  overflow: hidden;
+  padding: 120px 48px 80px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 80%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(6, 214, 160, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 60%;
+  height: 150%;
+  background: radial-gradient(ellipse, rgba(255, 209, 102, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 20px;
+  border-radius: 50px;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 32px;
+  backdrop-filter: blur(10px);
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.hero-sub {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent);
+  color: var(--deep);
+  padding: 16px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 209, 102, 0.35);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  padding: 16px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.3s;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-3px);
+}
+
+.hero-price {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-price-item {
+  text-align: center;
+}
+
+.hero-price-item .price {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.hero-price-item .price-label {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 4px;
+}
+
+/* ─── TRUST BAR ─── */
+.trust-bar {
+  background: var(--deep);
+  padding: 40px 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.trust-stats {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+
+.trust-stat .stat-number {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--teal);
+}
+
+.trust-stat .stat-label {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+}
+
+/* ─── SCOOTERS / FLEET ─── */
+.fleet {
+  padding: 100px 48px;
+  background: var(--white);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.section-tag {
+  display: inline-block;
+  background: rgba(6, 214, 160, 0.1);
+  color: var(--teal);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.fleet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.scooter-card {
+  background: var(--light-gray);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.scooter-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scooter-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+.scooter-img {
+  width: 100%;
+  height: 240px;
+  background: linear-gradient(135deg, #e0e5ec 0%, #d0d5dc 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  position: relative;
+}
+
+.scooter-img .popular-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--coral);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.scooter-info {
+  padding: 28px;
+}
+
+.scooter-info h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.scooter-info .scooter-desc {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.scooter-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.scooter-features span {
+  background: rgba(6, 214, 160, 0.1);
+  color: var(--sky);
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.scooter-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.scooter-price {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.scooter-price small {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-light);
+}
+
+.btn-book-scooter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--teal);
+  color: white;
+  padding: 10px 22px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.btn-book-scooter:hover {
+  background: #05c090;
+  transform: translateY(-2px);
+}
+
+/* ─── WHY US ─── */
+.why {
+  padding: 100px 48px;
+  background: var(--cream);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.why-card {
+  background: var(--white);
+  padding: 36px;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.4s;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.why-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.why-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.why-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.why-card p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ─── HOW IT WORKS ─── */
+.how {
+  padding: 100px 48px;
+  background: var(--white);
+}
+
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.how-step {
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--accent), var(--teal));
+  border-radius: 50%;
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--deep);
+  margin-bottom: 20px;
+}
+
+.how-step h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.how-step p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ─── REVIEWS ─── */
+.reviews {
+  padding: 100px 48px;
+  background: var(--deep);
+}
+
+.reviews .section-tag {
+  background: rgba(255, 209, 102, 0.15);
+  color: var(--accent);
+}
+
+.reviews .section-header h2 {
+  color: var(--white);
+}
+
+.reviews .section-header p {
+  color: rgba(255,255,255,0.5);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.review-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.4s;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.review-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.review-card:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-5px);
+}
+
+.review-stars {
+  color: var(--accent);
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.review-card p {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--deep);
+}
+
+.review-author-info .author-name {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.review-author-info .author-from {
+  color: rgba(255,255,255,0.4);
+  font-size: 0.8rem;
+}
+
+/* ─── EXPLORE ─── */
+.explore {
+  padding: 100px 48px;
+  background: var(--white);
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.explore-card {
+  background: var(--light-gray);
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.4s;
+}
+
+.explore-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.explore-card .explore-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.explore-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.explore-card p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ─── CTA ─── */
+.cta {
+  padding: 100px 48px;
+  background: linear-gradient(135deg, var(--deep) 0%, #1B3A4B 100%);
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.cta p {
+  color: rgba(255,255,255,0.7);
+  font-size: 1.1rem;
+  margin-bottom: 36px;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  background: #0A1219;
+  padding: 60px 48px 40px;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+}
+
+.footer-brand h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.footer-brand p {
+  color: rgba(255,255,255,0.4);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-col h4 {
+  color: var(--accent);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.footer-col a {
+  display: block;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.footer-col a:hover {
+  color: var(--white);
+}
+
+.footer-bottom {
+  max-width: 1100px;
+  margin: 40px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(255,255,255,0.3);
+  font-size: 0.8rem;
+}
+
+/* ─── SCROLL ANIMATIONS ─── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .trust-stats { grid-template-columns: repeat(2, 1fr); }
+  .footer-content { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+
+@media (max-width: 768px) {
+  .nav { padding: 16px 24px; }
+  .nav.scrolled { padding: 12px 24px; }
+  .nav-logo { font-size: 1.2rem; }
+  .nav-cta { padding: 10px 20px; font-size: 0.85rem; }
+  .hero { padding: 100px 24px 60px; min-height: auto; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero-sub { font-size: 1.05rem; }
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-secondary { width: 100%; max-width: 300px; justify-content: center; }
+  .hero-price { gap: 24px; }
+  .trust-stats { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .trust-stat .stat-number { font-size: 1.3rem; }
+  .fleet, .why, .how, .reviews, .explore, .cta { padding: 64px 24px; }
+  .fleet-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .how-steps { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .explore-grid { grid-template-columns: 1fr; }
+  .footer { padding: 40px 24px 30px; }
+  .footer-content { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .why-grid { grid-template-columns: 1fr; }
+  .how-steps { grid-template-columns: 1fr; }
+  .hero-price { flex-direction: column; gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo">
+    <span class="logo-icon">🛵</span> TongaScooters
+  </a>
+  <a href="https://wa.me/6768626339" class="nav-cta">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.75.75 0 00.917.918l4.462-1.494A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.344 0-4.507-.81-6.218-2.163l-.435-.337-2.842.951.953-2.845-.367-.453A9.964 9.964 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    WhatsApp
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🏝️ Tongatapu, Kingdom of Tonga</div>
+    <h1>Explore Tonga<br>on <em>Two Wheels</em></h1>
+    <p class="hero-sub">The easiest way to explore Tongatapu. Affordable scooter rentals with helmets included. We deliver to your hotel.</p>
+    <div class="hero-buttons">
+      <a href="https://wa.me/6768626339?text=Hi%2C%20I'd%20like%20to%20rent%20a%20scooter%20in%20Tonga" class="btn-primary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.75.75 0 00.917.918l4.462-1.494A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.344 0-4.507-.81-6.218-2.163l-.435-.337-2.842.951.953-2.845-.367-.453A9.964 9.964 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Book via WhatsApp
+      </a>
+      <a href="#fleet" class="btn-secondary">View Our Scooters ↓</a>
+    </div>
+    <div class="hero-price">
+      <div class="hero-price-item">
+        <div class="price">$25</div>
+        <div class="price-label">per day</div>
+      </div>
+      <div class="hero-price-item">
+        <div class="price">$150</div>
+        <div class="price-label">per week</div>
+      </div>
+      <div class="hero-price-item">
+        <div class="price">FREE</div>
+        <div class="price-label">hotel delivery</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="trust-bar">
+  <div class="trust-stats">
+    <div class="trust-stat">
+      <div class="stat-number">500+</div>
+      <div class="stat-label">Happy riders</div>
+    </div>
+    <div class="trust-stat">
+      <div class="stat-number">5+</div>
+      <div class="stat-label">Years in business</div>
+    </div>
+    <div class="trust-stat">
+      <div class="stat-number">FREE</div>
+      <div class="stat-label">Helmets included</div>
+    </div>
+    <div class="trust-stat">
+      <div class="stat-number">24/7</div>
+      <div class="stat-label">Roadside support</div>
+    </div>
+  </div>
+</section>
+
+<!-- FLEET -->
+<section class="fleet" id="fleet">
+  <div class="section-header">
+    <div class="section-tag">Our Fleet</div>
+    <h2>Choose Your Ride</h2>
+    <p>Well-maintained scooters perfect for exploring Tongatapu's beautiful coastline and villages.</p>
+  </div>
+  <div class="fleet-grid">
+    <div class="scooter-card">
+      <div class="scooter-img">
+        🛵
+        <span class="popular-badge">Most Popular</span>
+      </div>
+      <div class="scooter-info">
+        <h3>Standard Scooter</h3>
+        <p class="scooter-desc">Perfect for solo riders exploring the island. Easy to ride, fuel-efficient, and great for short trips around Nuku'alofa and beyond.</p>
+        <div class="scooter-features">
+          <span>Automatic</span>
+          <span>Helmet included</span>
+          <span>Fuel-efficient</span>
+        </div>
+        <div class="scooter-price-row">
+          <div class="scooter-price">$25 <small>/ day</small></div>
+          <a href="https://wa.me/6768626339?text=Hi%2C%20I'd%20like%20to%20rent%20a%20Standard%20Scooter" class="btn-book-scooter">Book Now →</a>
+        </div>
+      </div>
+    </div>
+    <div class="scooter-card">
+      <div class="scooter-img">
+        🏍️
+      </div>
+      <div class="scooter-info">
+        <h3>Premium Scooter</h3>
+        <p class="scooter-desc">More power for two riders or longer island tours. Comfortable seat, storage compartment, and smooth handling on all roads.</p>
+        <div class="scooter-features">
+          <span>Automatic</span>
+          <span>2 Helmets</span>
+          <span>Storage box</span>
+          <span>Passenger seat</span>
+        </div>
+        <div class="scooter-price-row">
+          <div class="scooter-price">$35 <small>/ day</small></div>
+          <a href="https://wa.me/6768626339?text=Hi%2C%20I'd%20like%20to%20rent%20a%20Premium%20Scooter" class="btn-book-scooter">Book Now →</a>
+        </div>
+      </div>
+    </div>
+    <div class="scooter-card">
+      <div class="scooter-img">
+        🛵
+      </div>
+      <div class="scooter-info">
+        <h3>Weekly Special</h3>
+        <p class="scooter-desc">Staying a full week? Save big with our weekly package. Same great scooter, better price. Includes unlimited mileage.</p>
+        <div class="scooter-features">
+          <span>7 days</span>
+          <span>Helmet included</span>
+          <span>Unlimited KM</span>
+          <span>Best value</span>
+        </div>
+        <div class="scooter-price-row">
+          <div class="scooter-price">$150 <small>/ week</small></div>
+          <a href="https://wa.me/6768626339?text=Hi%2C%20I'd%20like%20to%20rent%20a%20scooter%20for%20a%20week" class="btn-book-scooter">Book Now →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="section-header">
+    <div class="section-tag">Why Us</div>
+    <h2>Why Rent With Us</h2>
+    <p>We make scooter rental in Tonga simple, safe, and affordable.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">🏨</div>
+      <h3>Hotel Delivery</h3>
+      <p>We deliver the scooter directly to your hotel or accommodation. No need to come find us.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">⛑️</div>
+      <h3>Helmets Included</h3>
+      <p>Safety first. Every rental comes with a quality helmet at no extra charge.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🔧</div>
+      <h3>Well Maintained</h3>
+      <p>All scooters are regularly serviced and checked before every rental. Ride with confidence.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📞</div>
+      <h3>24/7 Support</h3>
+      <p>Flat tire? Need help? Call us anytime. We provide roadside assistance across Tongatapu.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">💰</div>
+      <h3>Best Prices</h3>
+      <p>Competitive daily and weekly rates. No hidden fees, no surprise charges. What you see is what you pay.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🗺️</div>
+      <h3>Local Tips</h3>
+      <p>We share the best routes, hidden beaches, and must-see spots that only locals know about.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="section-header">
+    <div class="section-tag">Easy Process</div>
+    <h2>How It Works</h2>
+    <p>From booking to riding in 3 simple steps.</p>
+  </div>
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="step-number">1</div>
+      <h3>Message Us</h3>
+      <p>Send us a WhatsApp message with your dates, hotel name, and which scooter you'd like.</p>
+    </div>
+    <div class="how-step">
+      <div class="step-number">2</div>
+      <h3>We Deliver</h3>
+      <p>We bring the scooter to your hotel with a helmet. Quick handover and you're ready to go.</p>
+    </div>
+    <div class="how-step">
+      <div class="step-number">3</div>
+      <h3>Explore Tonga</h3>
+      <p>Hit the road and discover Tongatapu at your own pace. Blowholes, beaches, markets, and more.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="section-header">
+    <div class="section-tag">Reviews</div>
+    <h2>What Riders Say</h2>
+    <p>Travellers love exploring Tonga on our scooters.</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>"Best way to see the island! Felix delivered the scooter right to our guesthouse. Super easy and the scooter ran perfectly the whole week."</p>
+      <div class="review-author">
+        <div class="review-avatar" style="background: linear-gradient(135deg, var(--accent), var(--teal));">M</div>
+        <div class="review-author-info">
+          <div class="author-name">Mark T.</div>
+          <div class="author-from">Brisbane, Australia</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>"So much cheaper and more fun than hiring a taxi everywhere. We found amazing beaches we never would have seen otherwise. Highly recommend!"</p>
+      <div class="review-author">
+        <div class="review-avatar" style="background: linear-gradient(135deg, var(--teal), var(--sky));">S</div>
+        <div class="review-author-info">
+          <div class="author-name">Sarah & Tom</div>
+          <div class="author-from">Auckland, New Zealand</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>"Had a small issue with the scooter and Felix came out within 20 minutes to swap it. Great service. The weekly rate is a bargain."</p>
+      <div class="review-author">
+        <div class="review-avatar" style="background: linear-gradient(135deg, var(--coral), var(--accent));">J</div>
+        <div class="review-author-info">
+          <div class="author-name">Jens W.</div>
+          <div class="author-from">Hamburg, Germany</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLORE TONGA -->
+<section class="explore" id="explore">
+  <div class="section-header">
+    <div class="section-tag">Discover</div>
+    <h2>Places to Explore</h2>
+    <p>Tongatapu is full of stunning spots, all within easy scooter distance.</p>
+  </div>
+  <div class="explore-grid">
+    <div class="explore-card">
+      <div class="explore-icon">🌊</div>
+      <h3>Mapu'a 'a Vaea Blowholes</h3>
+      <p>Spectacular natural blowholes shooting water metres into the air. One of Tonga's most iconic sights.</p>
+    </div>
+    <div class="explore-card">
+      <div class="explore-icon">🏖️</div>
+      <h3>Ha'atafu Beach</h3>
+      <p>Beautiful white sand beach perfect for swimming and snorkelling. A must-visit on the western coast.</p>
+    </div>
+    <div class="explore-card">
+      <div class="explore-icon">🪨</div>
+      <h3>Ha'amonga Trilithon</h3>
+      <p>Tonga's ancient stone gate, often called the "Stonehenge of the Pacific". A fascinating piece of history.</p>
+    </div>
+    <div class="explore-card">
+      <div class="explore-icon">🛍️</div>
+      <h3>Talamahu Market</h3>
+      <p>Nuku'alofa's vibrant market. Fresh tropical fruit, handmade crafts, and authentic Tongan food.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-content">
+    <h2>Ready to Ride?</h2>
+    <p>Message us on WhatsApp with your dates and we'll have a scooter waiting at your hotel. It's that simple.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/6768626339?text=Hi%2C%20I'd%20like%20to%20rent%20a%20scooter%20in%20Tonga" class="btn-primary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.75.75 0 00.917.918l4.462-1.494A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.344 0-4.507-.81-6.218-2.163l-.435-.337-2.842.951.953-2.845-.367-.453A9.964 9.964 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Book via WhatsApp
+      </a>
+      <a href="tel:+6768626339" class="btn-secondary">📞 Call Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <h3>🛵 Tonga Scooter Rentals</h3>
+      <p>Explore Tongatapu on two wheels. Affordable, reliable, and fun. Based in Nuku'alofa, Kingdom of Tonga.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#fleet">Our Scooters</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#explore">Places to Visit</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="https://wa.me/6768626339">WhatsApp: +676 8626339</a>
+      <a href="tel:+6768626339">Phone: +676 8626339</a>
+      <a href="#">Nuku'alofa, Tongatapu</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Tonga Scooter Rentals. All rights reserved.</span>
+    <span>Nuku'alofa, Kingdom of Tonga</span>
+  </div>
+</footer>
+
+<script>
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const delay = entry.target.dataset.delay || 0;
+      setTimeout(() => entry.target.classList.add('visible'), delay);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.scooter-card').forEach((el, i) => {
+  el.dataset.delay = i * 150;
+  observer.observe(el);
+});
+
+document.querySelectorAll('.why-card').forEach((el, i) => {
+  el.dataset.delay = i * 100;
+  observer.observe(el);
+});
+
+document.querySelectorAll('.review-card').forEach((el, i) => {
+  el.dataset.delay = i * 150;
+  observer.observe(el);
+});
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
