@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Scooter — Tonga Scooter Rentals</title>
+<meta name="description" content="Book your scooter rental in Tonga. Quick 2-minute booking process. One-seater 50 TOP/day, Two-seater 70 TOP/day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --deep: #0F1923;
+  --teal: #06D6A0;
+  --accent: #FFD166;
+  --white: #FFFFFF;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--deep);
+  color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 { font-family: 'Syne', sans-serif; }
+
+.booking-nav {
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 25, 35, 0.95);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.booking-nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.booking-nav .back-link {
+  color: rgba(255,255,255,0.6);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.booking-nav .back-link:hover {
+  color: var(--white);
+}
+
+.booking-nav-logo {
+  height: 40px;
+  width: auto;
+}
+
+.booking-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-container iframe {
+  flex: 1;
+  width: 100%;
+  min-height: calc(100vh - 68px);
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .booking-nav { padding: 12px 16px; }
+  .booking-nav a { font-size: 0.95rem; }
+  .booking-nav-logo { height: 32px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="booking-nav">
+  <a href="/">
+    <img src="../logo.jpg" alt="Scooter Rental Tonga" class="booking-nav-logo">
+  </a>
+  <a href="/" class="back-link">← Back to main site</a>
+</nav>
+
+<div class="booking-container">
+  <iframe src="https://tongascooterrental.flowrent.app/shop" allow="payment" loading="lazy"></iframe>
+</div>
+
+</body>
+</html>
